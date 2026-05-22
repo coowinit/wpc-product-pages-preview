@@ -14,7 +14,7 @@
 docs/screenshots/
 ```
 
-建议使用以下文件名，这样 README.md 可以自动显示图片：
+这样 README.md 可以自动显示图片：
 
 ```text
 docs/screenshots/product-list-page-preview.png
