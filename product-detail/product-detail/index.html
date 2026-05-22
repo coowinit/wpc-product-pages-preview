@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Detail Page - Large Gallery with Thumbnail Scroll</title>
+
+  <!-- Swiper CDN：后期放入 WooCommerce / 普通 B2B 询盘系统时，也可以改为主题本地资源 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="page-container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="#">Products</a>
+      <span>/</span>
+      <a href="#">Decking</a>
+      <span>/</span>
+      <strong>Refined Neutrals Decking Samples Kit</strong>
+    </nav>
+
+    <section class="product-detail-layout" data-product-id="sample-kit-refined-neutrals">
+      <!-- 左侧：产品图库 -->
+      <div class="product-gallery" aria-label="Product gallery">
+        <div class="gallery-thumbs-wrap">
+          <div class="swiper product-thumbs-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide thumb-slide is-variant-thumb">
+                <img id="variantThumbImage" src="images/kit-refined-neutrals.svg" alt="Refined Neutrals Decking Sample Kit thumbnail" />
+              </div>
+              <div class="swiper-slide thumb-slide">
+                <img src="images/scene-modern-patio.svg" alt="Modern patio scene thumbnail" />
+              </div>
+              <div class="swiper-slide thumb-slide">
+                <img src="images/scene-villa-deck.svg" alt="Villa deck scene thumbnail" />
+              </div>
+              <div class="swiper-slide thumb-slide">
+                <img src="images/scene-garden-fence.svg" alt="Garden terrace scene thumbnail" />
+              </div>
+              <div class="swiper-slide thumb-slide">
+                <img src="images/scene-outdoor-dining.svg" alt="Outdoor dining scene thumbnail" />
+              </div>
+              <div class="swiper-slide thumb-slide">
+                <img src="images/scene-poolside.svg" alt="Poolside deck scene thumbnail" />
+              </div>
+              <div class="swiper-slide thumb-slide">
+                <img src="images/scene-balcony.svg" alt="Balcony deck scene thumbnail" />
+              </div>
+            </div>
+          </div>
+
+          <button class="thumb-nav-button thumb-nav-prev is-disabled" type="button" aria-label="Show previous product thumbnail">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6.2 8.6 12 14.4l5.8-5.8 1.4 1.4L12 17.2 4.8 10l1.4-1.4Z" fill="currentColor" />
+            </svg>
+          </button>
+
+          <button class="thumb-nav-button thumb-nav-next" type="button" aria-label="Show next product thumbnail">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6.2 8.6 12 14.4l5.8-5.8 1.4 1.4L12 17.2 4.8 10l1.4-1.4Z" fill="currentColor" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="gallery-main-wrap">
+          <div class="swiper product-main-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide main-slide">
+                <img id="mainVariantImage" src="images/kit-refined-neutrals.svg" alt="Refined Neutrals Decking Sample Kit" />
+              </div>
+              <div class="swiper-slide main-slide">
+                <img src="images/scene-modern-patio.svg" alt="Modern patio deck application" />
+              </div>
+              <div class="swiper-slide main-slide">
+                <img src="images/scene-villa-deck.svg" alt="Villa outdoor deck application" />
+              </div>
+              <div class="swiper-slide main-slide">
+                <img src="images/scene-garden-fence.svg" alt="Garden terrace decking application" />
+              </div>
+              <div class="swiper-slide main-slide">
+                <img src="images/scene-outdoor-dining.svg" alt="Outdoor dining decking application" />
+              </div>
+              <div class="swiper-slide main-slide">
+                <img src="images/scene-poolside.svg" alt="Poolside decking application" />
+              </div>
+              <div class="swiper-slide main-slide">
+                <img src="images/scene-balcony.svg" alt="Balcony decking application" />
+              </div>
+            </div>
+          </div>
+
+          <button class="zoom-button" type="button" aria-label="Zoom current product image">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M10.5 4a6.5 6.5 0 0 1 5.18 10.43l3.45 3.44-1.26 1.26-3.44-3.45A6.5 6.5 0 1 1 10.5 4Zm0 1.8a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4Zm.9 1.8v2h2v1.8h-2v2H9.6v-2h-2V9.6h2v-2h1.8Z" fill="currentColor" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- 右侧：产品信息 -->
+      <div class="product-summary">
+        <h1>Refined Neutrals Decking Sample Kit</h1>
+
+        <div class="review-row">
+          <span class="stars" aria-label="5 stars">★★★★★</span>
+          <span class="rating-score">5.0</span>
+          <span class="review-count">(2)</span>
+          <a href="#reviews">Write a review</a>
+        </div>
+
+        <p class="product-intro">
+          Soft. Subtle. Elevated. The Refined Neutrals Sample Kit blends understated tones like sandy taupes and airy greys into a palette that feels effortlessly luxurious. Designed for flexible styling and serene outdoor spaces, this kit pairs calm color with long-term durability.
+        </p>
+
+        <div class="price-shipping-row">
+          <strong class="price">$5.00</strong>
+          <span class="shipping-note">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M3 6h11v8h2.2l2-3H21v6h-2.05a2.5 2.5 0 0 1-4.9 0H9.95a2.5 2.5 0 0 1-4.9 0H3V6Zm2 2v7h.76a2.5 2.5 0 0 1 3.48 0H12V8H5Zm11 5h.13l1.96-3H16v3Zm.5 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm-9 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Z" />
+            </svg>
+            Free Shipping
+          </span>
+        </div>
+
+        <p class="selected-color">
+          <strong>Color:</strong>
+          <span id="selectedColorName">Refined Neutrals Decking Samples Kit</span>
+        </p>
+
+        <div class="kit-options" aria-label="Kit options">
+          <h2>KIT OPTIONS</h2>
+          <div class="swatch-grid">
+            <button class="swatch-button active" type="button" data-variant="refined-neutrals" aria-label="Refined Neutrals">
+              <img src="images/swatch-refined-neutrals.svg" alt="Refined Neutrals swatch" />
+            </button>
+            <button class="swatch-button" type="button" data-variant="contemporary-greys" aria-label="Contemporary Greys">
+              <img src="images/swatch-contemporary-greys.svg" alt="Contemporary Greys swatch" />
+            </button>
+            <button class="swatch-button" type="button" data-variant="warm-browns" aria-label="Warm Browns">
+              <img src="images/swatch-warm-browns.svg" alt="Warm Browns swatch" />
+            </button>
+            <button class="swatch-button" type="button" data-variant="natural-tones" aria-label="Natural Tones">
+              <img src="images/swatch-natural-tones.svg" alt="Natural Tones swatch" />
+            </button>
+            <button class="swatch-button" type="button" data-variant="classic-earth" aria-label="Classic Earth">
+              <img src="images/swatch-classic-earth.svg" alt="Classic Earth swatch" />
+            </button>
+            <button class="swatch-button" type="button" data-variant="coastal-light" aria-label="Coastal Light">
+              <img src="images/swatch-coastal-light.svg" alt="Coastal Light swatch" />
+            </button>
+          </div>
+        </div>
+
+        <div class="purchase-panel">
+          <div class="quantity-area">
+            <h2>QUANTITY</h2>
+            <div class="quantity-control" aria-label="Quantity selector">
+              <button type="button" class="quantity-btn decrease" aria-label="Decrease quantity">−</button>
+              <input class="quantity-input" type="text" value="1" inputmode="numeric" aria-label="Quantity" />
+              <button type="button" class="quantity-btn increase" aria-label="Increase quantity">＋</button>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <!-- WooCommerce 支付商城可保留 Add to Cart；B2B 询盘商城可隐藏 Add to Cart，仅保留 Request Quote -->
+            <button class="primary-button add-to-cart-button" type="button">Add to Cart</button>
+            <button class="secondary-button quote-button" type="button">Request Quote</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-extra-info" id="reviews">
+      <div class="info-card">
+        <h2>Product Details</h2>
+        <p>This sample kit layout is suitable for WooCommerce product pages, sample order pages, and non-payment B2B inquiry product pages.</p>
+      </div>
+      <div class="info-card">
+        <h2>Integration Notes</h2>
+        <p>The gallery, swatches, quantity selector, add-to-cart button, and quote button are separated with clear class names for later theme integration.</p>
+      </div>
+      <div class="info-card">
+        <h2>Responsive Layout</h2>
+        <p>Desktop uses a two-column detail layout. On mobile, the gallery stacks above the product information for easier browsing.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Close zoom preview">×</button>
+    <img class="lightbox-image" src="" alt="Zoomed product preview" />
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
