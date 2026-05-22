@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" role="img" aria-labelledby="title desc">
+  <title id="title">Reversed contemporary grey decking sample fan</title>
+  <desc id="desc">A vector product image showing mirrored grey decking sample boards.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+    <pattern id="linearGrain" width="15" height="20" patternUnits="userSpaceOnUse">
+      <path d="M0 4 H15 M0 11 H15 M0 18 H15" stroke="#111" stroke-opacity="0.1" stroke-width="1"/>
+      <path d="M2 0 C7 5 8 12 13 20" fill="none" stroke="#111" stroke-opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="620" fill="#fff"/>
+  <g transform="translate(405 330) scale(-1 1)" filter="url(#shadow)">
+    <g transform="rotate(-28)">
+      <rect x="-72" y="-218" width="144" height="436" rx="8" fill="#2f3940"/>
+      <rect x="-72" y="-218" width="144" height="436" rx="8" fill="url(#linearGrain)"/>
+    </g>
+    <g transform="rotate(-14)">
+      <rect x="-72" y="-228" width="144" height="456" rx="8" fill="#616970"/>
+      <rect x="-72" y="-228" width="144" height="456" rx="8" fill="url(#linearGrain)"/>
+    </g>
+    <g transform="rotate(0)">
+      <rect x="-72" y="-238" width="144" height="476" rx="8" fill="#a7adb2"/>
+      <rect x="-72" y="-238" width="144" height="476" rx="8" fill="url(#linearGrain)"/>
+    </g>
+    <g transform="rotate(14)">
+      <rect x="-72" y="-232" width="144" height="464" rx="8" fill="#c5c9cb"/>
+      <rect x="-72" y="-232" width="144" height="464" rx="8" fill="url(#linearGrain)"/>
+    </g>
+    <g transform="rotate(28)">
+      <rect x="-72" y="-222" width="144" height="444" rx="8" fill="#e2e5e6"/>
+      <rect x="-72" y="-222" width="144" height="444" rx="8" fill="url(#linearGrain)"/>
+    </g>
+  </g>
+</svg>

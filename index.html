@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WPC Product Pages Preview</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --brand: #005746;
+      --brand-dark: #003f34;
+      --accent: #8cc63f;
+      --text: #111827;
+      --muted: #5b6472;
+      --line: #e5e7eb;
+      --soft: #f7f9f8;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(140, 198, 63, 0.14), transparent 34%),
+        linear-gradient(180deg, #ffffff 0%, #f7faf8 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-wrap {
+      width: 100%;
+      max-width: 1200px;
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 52px 20px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+      gap: 38px;
+      align-items: center;
+      margin-bottom: 34px;
+      padding: 52px;
+      border: 1px solid rgba(0, 87, 70, 0.12);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 18px 50px rgba(17, 24, 39, 0.08);
+      backdrop-filter: blur(12px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 18px;
+      color: var(--brand);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 0;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.03;
+      letter-spacing: -0.045em;
+    }
+
+    .hero-desc {
+      max-width: 640px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .hero-panel {
+      padding: 28px;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .hero-panel h2 {
+      margin: 0 0 14px;
+      font-size: 18px;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .feature-list li {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .feature-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .page-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .page-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 330px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .page-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 87, 70, 0.34);
+      box-shadow: 0 16px 44px rgba(17, 24, 39, 0.1);
+    }
+
+    .card-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(0, 87, 70, 0.22);
+      color: var(--brand);
+      font-weight: 700;
+    }
+
+    .page-card h2 {
+      margin: 0 0 14px;
+      font-size: 26px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .page-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 24px 0 30px;
+    }
+
+    .tag {
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      color: #334155;
+      font-size: 13px;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 12px 18px;
+      border: 1px solid var(--brand);
+      color: var(--brand);
+      font-size: 15px;
+      font-weight: 700;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--brand);
+      color: #ffffff;
+    }
+
+    .button:hover {
+      background: var(--brand-dark);
+      border-color: var(--brand-dark);
+      color: #ffffff;
+    }
+
+    .footer-note {
+      margin: 30px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .site-wrap {
+        padding: 32px 16px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 34px 24px;
+      }
+
+      .page-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero {
+        padding: 28px 18px;
+      }
+
+      .page-card {
+        min-height: auto;
+        padding: 26px 20px;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="site-wrap">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">WPC E-commerce UI Preview</p>
+        <h1>Product List & Detail Page Templates</h1>
+        <p class="hero-desc">
+          一个用于 GitHub Pages 预览的产品页面入口，包含产品分类列表页和产品详情页两个静态 HTML 示例，适合后期整理到 WooCommerce 商城或 B2B 询盘型商城中继续开发。
+        </p>
+      </div>
+
+      <aside class="hero-panel" aria-label="Project features">
+        <h2>Included Pages</h2>
+        <ul class="feature-list">
+          <li>产品列表页：分类筛选、分页、hover 双图切换、响应式卡片布局。</li>
+          <li>产品详情页：主图图库、左侧缩略图、色卡切换、数量选择、询盘按钮。</li>
+          <li>页面最大宽度统一为 1200px，方便作为商城页面布局参考。</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="page-grid" aria-label="Preview pages">
+      <article class="page-card">
+        <span class="card-number">01</span>
+        <h2>Product Category Page</h2>
+        <p>
+          完整的产品分类列表页示例：一行三列、分类按钮、分页、产品标题最多两行、产品图 hover 切换场景图。
+        </p>
+        <div class="tag-row">
+          <span class="tag">Grid Layout</span>
+          <span class="tag">Filter</span>
+          <span class="tag">Pagination</span>
+          <span class="tag">Hover Image</span>
+        </div>
+        <div class="card-actions">
+          <a class="button primary" href="product-list/index.html">Open Product List</a>
+          <a class="button" href="product-list/README.md">View Notes</a>
+        </div>
+      </article>
+
+      <article class="page-card">
+        <span class="card-number">02</span>
+        <h2>Product Detail Page</h2>
+        <p>
+          产品详情页示例：左右 1:1 布局、Swiper 主图、缩略图上下箭头、色卡切换、Add to Cart 和 Request Quote 双按钮。
+        </p>
+        <div class="tag-row">
+          <span class="tag">Swiper Gallery</span>
+          <span class="tag">Swatches</span>
+          <span class="tag">WooCommerce</span>
+          <span class="tag">B2B Inquiry</span>
+        </div>
+        <div class="card-actions">
+          <a class="button primary" href="product-detail/index.html">Open Product Detail</a>
+          <a class="button" href="product-detail/README.md">View Notes</a>
+        </div>
+      </article>
+    </section>
+
+    <p class="footer-note">Upload this folder to GitHub, enable GitHub Pages, then open the Pages URL to preview both pages.</p>
+  </main>
+</body>
+</html>
